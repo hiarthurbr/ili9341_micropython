@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard-mini",
+      "id": "bb2",
+      "top": -135.8,
+      "left": -31.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -4.9,
+      "left": 43,
+      "attrs": { "env": "micropython-20210902-v1.17" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn1",
+      "top": -239.5,
+      "left": 109.1,
+      "rotate": 90,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-ili9341",
+      "id": "lcd1",
+      "top": -373.6,
+      "left": 153.3,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -239.7,
+      "left": -159,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -312.8,
+      "left": 1.1,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -235.2,
+      "left": -19.75,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -235.2,
+      "left": -0.55,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": -235.2,
+      "left": 9.05,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    ["esp:TX0", "$serialMonitor:RX", "", []],
+    ["esp:RX0", "$serialMonitor:TX", "", []],
+    ["esp:D15", "lcd1:CS", "orange", ["h172.5", "v-153.8", "h-96", "v-9.6"]],
+    ["esp:D2", "lcd1:D/C", "gold", ["h182.1", "v-163.9", "h-86.4"]],
+    ["esp:D4", "lcd1:RST", "limegreen", ["h191.7", "v-143.9", "h-105.6"]],
+    ["esp:D18", "lcd1:SCK", "green", ["h201.3", "v-124.8", "h-86.4"]],
+    ["esp:D19", "lcd1:MISO", "blue", ["h210.9", "v-124.9", "h-76.8"]],
+    ["esp:D23", "lcd1:MOSI", "cyan", ["h220.5", "v-86.3", "h-115.2"]],
+    ["esp:GND.2", "bb2:1t.d", "black", ["h-86.4", "v-240.1"]],
+    ["bb2:1t.e", "bb2:2t.e", "black", ["v0"]],
+    ["bb2:3t.e", "bb2:4t.e", "black", ["v0"]],
+    ["bb2:5t.e", "bb2:6t.e", "black", ["v0"]],
+    ["bb2:7t.e", "bb2:8t.e", "black", ["v0"]],
+    ["bb2:9t.e", "bb2:10t.e", "black", ["v0"]],
+    ["bb2:11t.e", "bb2:12t.e", "black", ["v0"]],
+    ["bb2:13t.e", "bb2:14t.e", "black", ["v0"]],
+    ["bb2:15t.e", "bb2:16t.e", "black", ["v0", "h9.6"]],
+    ["bb2:2t.d", "bb2:3t.d", "black", ["v0"]],
+    ["bb2:4t.d", "bb2:5t.d", "black", ["v0"]],
+    ["bb2:6t.d", "bb2:7t.d", "black", ["v0"]],
+    ["bb2:8t.d", "bb2:9t.d", "black", ["v0"]],
+    ["bb2:10t.d", "bb2:11t.d", "black", ["v0"]],
+    ["bb2:12t.d", "bb2:13t.d", "black", ["v0"]],
+    ["bb2:14t.d", "bb2:15t.d", "black", ["v0"]],
+    ["bb2:16t.d", "bb2:17t.d", "black", ["v0"]],
+    ["bb2:1b.j", "bb2:2b.j", "red", ["v0"]],
+    ["bb2:2b.i", "bb2:3b.i", "red", ["v0"]],
+    ["bb2:3b.j", "bb2:4b.j", "red", ["v0"]],
+    ["bb2:4b.i", "bb2:5b.i", "red", ["v0"]],
+    ["bb2:5b.j", "bb2:6b.j", "red", ["v0"]],
+    ["bb2:6b.i", "bb2:7b.i", "red", ["v0"]],
+    ["bb2:7b.j", "bb2:8b.j", "red", ["v0"]],
+    ["bb2:8b.i", "bb2:9b.i", "red", ["v0"]],
+    ["bb2:9b.j", "bb2:10b.j", "red", ["v0"]],
+    ["bb2:10b.i", "bb2:11b.i", "red", ["v0"]],
+    ["bb2:11b.j", "bb2:12b.j", "red", ["v0"]],
+    ["bb2:12b.i", "bb2:13b.i", "red", ["v0", "h9.6"]],
+    ["bb2:13b.j", "bb2:14b.j", "red", ["v0"]],
+    ["bb2:14b.i", "bb2:15b.i", "red", ["v0"]],
+    ["bb2:15b.j", "bb2:16b.j", "red", ["v0"]],
+    ["bb2:16b.i", "bb2:17b.i", "red", ["v0"]],
+    ["esp:VIN", "bb2:1b.i", "red", ["h-96", "v-182.4"]],
+    ["esp:D13", "dht1:SDA", "white", ["h0"]],
+    ["bb2:1b.h", "dht1:VCC", "red", ["v0", "h-124.8"]],
+    ["bb2:1t.c", "dht1:GND", "black", ["v0", "h-96"]],
+    ["bb2:17b.j", "lcd1:VCC", "red", ["v0", "h67.2"]],
+    ["bb2:17t.e", "lcd1:GND", "black", ["h9.6", "v19.2", "h67.2"]],
+    ["bb2:1b.g", "rgb1:COM", "white", ["v0", "h-28.8", "v-96", "h57.6"]],
+    ["bb2:1b.f", "btn1:1.r", "red", ["v0", "h-38.4", "v-96", "h192"]],
+    ["btn1:2.r", "esp:D12", "violet", ["v48.8", "h-173.2", "v288"]],
+    ["r3:1", "rgb1:G", "limegreen", ["h0"]],
+    ["r4:1", "rgb1:B", "cyan", ["h0"]],
+    ["r1:2", "esp:D25", "red", ["h0", "v8.4", "h-105.6", "v220.8"]],
+    ["r3:2", "esp:D26", "limegreen", ["h0", "v18", "h-115.2", "v268.8"]],
+    ["r4:2", "esp:D27", "cyan", ["h0", "v27.6", "h-115.2", "v288"]],
+    ["rgb1:R", "r1:1", "red", ["v0"]]
+  ],
+  "dependencies": {}
+}
